@@ -207,8 +207,7 @@ actor DeviceConnectionManager {
         interfaces
             .compactMap { $0 as? TunnelNetInfo }
             .filter { 
-                $0.tunnelType == .utun && 
-                !$0.interfaceAddresses.v4.isEmpty && $0.interfaceAddresses.v6.isEmpty 
+                $0.tunnelType == .utun && !$0.interfaceAddresses.v4.isEmpty
             }
             .sorted { $0.name < $1.name }
     }
